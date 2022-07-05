@@ -1,4 +1,4 @@
-# WordPress & PHP Cheat sheet
+# WordPress & PHP Cheatsheet
 
 ## Prevent files from being called directly
 
