@@ -18,3 +18,5 @@
     ```
     grid-repeat-colums: repeat(auto-fit, minmax(19rem, 1fr));
     ```
+
+1. Set Aspect ration with CSS -- with `aspect-ratio`

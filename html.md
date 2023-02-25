@@ -16,3 +16,7 @@
 1. use `<mark>` to highlight text with a yellow marker
 
 1. Don't use `<ul>/<li>` for two column lists, use [Description Lists](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl):
+
+1. `<datalist>` is a select with built-in autosuggest
+
+1. Define multiple image sizes for all screen resolutions with `<picture>`
