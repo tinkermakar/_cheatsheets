@@ -1,6 +1,21 @@
-# Scanning Documents on Linux
+# Utilities
 
-## Rotate scanned pages
+## Converting `.mkv` videos to `.mp4`
+
+```bash
+export FF=filename
+ffmpeg \
+  -i ${FF}.mkv \
+  -c copy \
+  -c:a aac \
+  -movflags \
+  +faststart \
+  ${FF}.mp4
+```
+
+## Scanning Documents on Linux
+
+### Rotate scanned pages
 
 ```bash
 compress a PDF (save as optimized)
@@ -19,7 +34,7 @@ or
 pdftk in.pdf rotate 2down output in-new.pdf && rm in.pdf && mv in-new.pdf in.pdf
 ```
 
-## Compress to ebook size
+### Compress to ebook size
 
 ```bash
 gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dBATCH  -dQUIET -sOutputFile=out.pdf in.pdf
