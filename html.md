@@ -2,8 +2,19 @@
 
 1. `<script defer ...>` runs the script only when the page is done loading
 
-1. How to escape HTML markup
+1. Preload resources with pure HTML
+    ```html
+    <head>
+      <link rel="preload" href="example.jpg" as="image" />
     ```
+
+1. Lazy load images
+    ```html
+    <img src="/icon.png" loading="lazy" />
+    ```
+
+1. How to escape HTML markup
+    ```html
     <![CDATA[<sender>John Smith</sender>]]>
     ```
     the above outputs the below
@@ -20,3 +31,12 @@
 1. `<datalist>` is a select with built-in autosuggest
 
 1. Define multiple image sizes for all screen resolutions with `<picture>`
+
+1. Talking to robots
+    ```html
+    <!-- point at the original source of this page's content -->
+    <link rel="canonical" ... />
+
+    <!-- indexing instructions for robots (skip etc.) -->
+    <meta name="robots" ... />
+    ```

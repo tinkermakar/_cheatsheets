@@ -20,3 +20,14 @@
       return output;
     };
     ```
+
+1. Make an object immutable
+    ```ts
+    const obj = {
+      foo: 'bar'
+    } as const
+    ```
+
+1. `Required<...>` is the opposite of `Partial<...>`
+
+1. `protected` methods of TS classes are private, but accessible by child classes

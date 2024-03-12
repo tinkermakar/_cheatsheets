@@ -103,12 +103,42 @@
     
     The difference -- when using `||` all these falsy values result in the return of the fallback value: `0, '', NaN, null, undefined`. However, `??` only takes the fallback value only if the first is  `null` or `undefined`. This is helpful to avoid from skipping `0` or an empty string when they are actually legit values.  
 
+1. Conditional object fields
+    ```js
+    const obj = {
+        a: 1,
+        b: 2,
+        ...(foo && { foo: 'bar'})
+    }
+    ```
+
 1. Bind (TODO make a separate section about it?)
     `function.bind` does not run the function, but it can also pre-define first parameter(s):
     ```js
-    foo = bar.bind(this, setValue)
+    const foo = bar.bind(this, setValue)
     ```
 
 1. <em>Operator Precedence</em> in JavaScript makes multiplication (`x`) run before `+`
 
 1. Don't forget to encode and decode query parameters with `encodeURIComponent()` and `decodeURIComponent()`
+
+1. `URLSearchParams` and `URL` are useful to construct and pars URLs and query params
+
+1. Padding strings is now built-in
+    ```js
+    7.padStart(3, '0')
+    // '007'
+    ```
+
+1. Smooth scroll
+    ```js
+    document.querySelector(element).scrollIntoView({  behavior: 'smooth' });
+    ```
+
+1. Reverse `Object.entries` with `Object.fromEntries()`
+
+1. Browsers have built-in TTS now
+    ```js
+    let utterance = new SpeechSynthesisUtterance("Hello world!");
+    speechSynthesis.speak(utterance);
+    ```

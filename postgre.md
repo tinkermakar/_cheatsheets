@@ -26,3 +26,8 @@
     ```
 
 1. Debug query performance with `EXPLAIN ANALYZE ...`
+
+1. Mock DB for tests:
+    ```bash
+    npm i -D @shelfio/jest-postgres
+    ```

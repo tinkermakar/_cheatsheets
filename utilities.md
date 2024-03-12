@@ -12,6 +12,7 @@ ffmpeg \
   +faststart \
   ${FF}.mp4
 ```
+Optionally, amplify the audio by adding this flag as well: `-filter:a "volume=2"` 
 
 ## Scanning Documents on Linux
 
