@@ -5,14 +5,26 @@
 ```bash
 export FF=filename
 ffmpeg \
-  -i ${FF}.mkv \
+  -i "${FF}.mkv" \
   -c copy \
   -c:a aac \
   -movflags \
   +faststart \
-  ${FF}.mp4
+  "${FF}.mp4"
 ```
-Optionally, amplify the audio by adding this flag as well: `-filter:a "volume=2"` 
+
+Additional useful flags
+
+```bash
+# amplify the audio 
+-filter:a "volume=2" \
+
+# use only one audio track
+# credit: https://superuser.com/a/639430
+-map 0:v:0 \
+-map 0:a:1 \
+
+```
 
 ## Scanning Documents on Linux
 
