@@ -1,19 +1,5 @@
 # Utilities
 
-## Converting `.mkv` videos to `.mp4`
-
-```bash
-export FF=filename
-ffmpeg \
-  -i ${FF}.mkv \
-  -c copy \
-  -c:a aac \
-  -movflags \
-  +faststart \
-  ${FF}.mp4
-```
-Optionally, amplify the audio by adding this flag as well: `-filter:a "volume=2"` 
-
 ## Scanning Documents on Linux
 
 ### Rotate scanned pages
