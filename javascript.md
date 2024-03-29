@@ -25,7 +25,7 @@
 - ES6 onwards: `Object extends Prototype()`
 
 
-## Arrow functions
+## Array methods
 
 1. Most used ones: `array.find` & `array.filter`
 
@@ -33,13 +33,6 @@
     ```js
     const isArray = array instanceof Array;
     ```
-
-1. Return an object from arrow function
-    ```js
-    const function = () => ({ key1: value1, key2: value2 });
-    ```
-
-1. To return a multi-line statement from an <em>arrow function</em>, it’s necessary to use `()` instead of `{}` to wrap your function body. This ensures the code is evaluated as a single statement.
 
 1. Check if array includes a certain value among entries
     
@@ -62,6 +55,18 @@
     const isMatchingAll = array.some(el => el.name)
     ```
 
+1. Crete an array (just as an iterable) with any length necessary
+    ```js
+    new Array(5).fill(0)
+    ```
+
+## Arrow functions
+1. Return an object from arrow function
+    ```js
+    const function = () => ({ key1: value1, key2: value2 });
+    ```
+
+1. To return a multi-line statement from an <em>arrow function</em>, it’s necessary to use `()` instead of `{}` to wrap your function body. This ensures the code is evaluated as a single statement.
 
 ## Using Debuggers
 
