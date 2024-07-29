@@ -96,6 +96,10 @@
         data.toString().trim();
         ```
 
+1. Unit tests:
+    - mock MongoDB: `sinon`
+    - test express.js without starting it: `supertest`
+    - BONUS terminology: two main types of `test doubles` used in unit/integration tests are `test stubs` and `mocks`.
 
 ## Misc
 
