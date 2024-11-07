@@ -52,7 +52,7 @@
 1. Check if all entries of an array match an expression (returns true if all elements returned true)
 
     ```js
-    const isMatchingAll = array.some(el => el.name)
+    const isMatchingAll = array.every(el => el.name)
     ```
 
 1. Crete an array (just as an iterable) with any length necessary
