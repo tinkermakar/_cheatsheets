@@ -3,6 +3,7 @@
 ## Ohm's law
 
 V = I R
+
 Voltage (v) = Current (amp) * Resistance (Ω)
 
 
