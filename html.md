@@ -40,3 +40,16 @@
     <!-- indexing instructions for robots (skip etc.) -->
     <meta name="robots" ... />
     ```
+
+1. `<template>` elements don't get loaded until you display them with JS. You can
+    1. predefine things there but prevent the browser from burdening itself with processing them, and then
+    2. show them with methods like `appendChild`
+    3. Show in multiple places (reusable)
+
+1. Built-in html collapsible elements
+    ```html
+    <details>
+        <summary>Visible</summary>
+        <p>Invisible until the summary is clicked</p>
+    </details>
+    ```

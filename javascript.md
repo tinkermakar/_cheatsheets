@@ -60,6 +60,15 @@
     new Array(5).fill(0)
     ```
 
+1. group array elements by a matching property value
+    ```js
+    const arr= [{ id: 1, balance: 1 }, { id: 2, balance: 2 }, { id: 3, balance: 1 }];
+
+    Object.groupBy(arr, ({balance}) => balance);
+    // { '1': [ { id: 1, balance: 1 }, { id: 3, balance: 1 } ], '2': [ { id: 2, balance: 2 } ] }
+    ```
+
+
 ## Arrow functions
 1. Return an object from arrow function
     ```js
@@ -150,4 +159,19 @@
     ```js
     let utterance = new SpeechSynthesisUtterance("Hello world!");
     speechSynthesis.speak(utterance);
+    ```
+
+1. a shorthand for `filter().map()`
+    credit: https://dev.to/rajajaganathan/flatmap-vs-filtermap-code-simplicity-aeb
+    ```js
+        const arr = [{foo: null}, {foo: undefined}, {foo: 0}, {foo: 1}, {foo: 2}]
+        > arr.flatMap(({ foo }) => foo ? foo : [])
+    ```
+
+1. An alternative to `console.time()`
+    ```js
+    const {performance} = require('node:perf_hooks');
+    const start = performance.now();
+    const end = performance.now();
+    const diff = end - start;
     ```

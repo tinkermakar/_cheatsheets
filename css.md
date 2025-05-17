@@ -35,3 +35,11 @@
 1. CSS finally support selecting parents via child tags: `:has`
 
 1. Extra conditional in CSS selectors can be defined with `:is()` and `:where()`. The only difference between the two is that specificity of `where` is flat 0
+
+1. The `currentColor` keyword refers to the value of the `color` property of an element, so you can set e.g. the `border-color` by referring to `color`
+
+1. `inset: 1px 2px 3px 4px` is a shorthand for `top: 1px; right: 2px; bottom: 3px; left: 4px;`
+
+1. align child items centered vertically without a need for making it a flexbox: `align-content: center;` (to add horizontal centering `margin: 0 auto;` is still needed)
+
+1. Clicking hashtag links to a section brings exactly to the top of that section, but it's too close to the top, we can make space with `scroll-margin-top`
