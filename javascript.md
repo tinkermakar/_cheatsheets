@@ -79,6 +79,20 @@
 
 ## Using Debuggers
 
+1. Add this to launch.json to preserve Chrome state across debug sessions in terms of settings and Chrome plugins:
+    ```json
+    {
+      ...
+      "configurations": [
+      {
+        ...
+        "runtimeArgs": [
+            "--user-data-dir=${env:HOME}/chrome-debug-profile"
+        ]
+      }
+    }
+    ```
+
 1. Call stack is debugging's backwards time machine
 
 1. Right click on the gutter (line numbers) to add an additional condition to the breakpoint
