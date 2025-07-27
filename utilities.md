@@ -38,5 +38,13 @@ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dB
 ### Bake updated metadata dates of images into the actual files
 
 ```bash
-exiv2 -S .jpg.xmp insert FILE_NAME.jpg
+sudo apt install exiftool -y
+
+find . -name '*.xmp' | while read -r xmp; do
+  media="${xmp%.xmp}"
+  exiftool -overwrite_original \
+    -tagsfromfile "$xmp" \
+    -all:all "$media" &&\
+    rm "$xmp"
+done
 ```
