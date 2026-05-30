@@ -31,3 +31,13 @@
     ```bash
     npm i -D @shelfio/jest-postgres
     ```
+
+1. For a big dynamic list of lookup values, prefix the query with a `WITH ... VALUES` table and join against it instead of building huge `IN (...)`/`OR` chains. This will make it much faster. Always confirm with `EXPLAIN ANALYZE`.
+    ```sql
+    WITH wanted(id) AS (
+      VALUES (101), (205), (309)
+    )
+    SELECT p.*
+    FROM posts p
+    JOIN wanted w ON w.id = p.id;
+    ```

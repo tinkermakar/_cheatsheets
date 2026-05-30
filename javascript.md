@@ -115,7 +115,6 @@
 
 1. In Chrome DevTools I can right click anywhere in a file (jQuery Library, Node.js module file) and blackbox it so as I would never get into them when debugging
 
-
 ## Node Packages
 
 1. Apache replacement: `http-server`
@@ -158,6 +157,10 @@
     }
     ```
 
+1. `structuredClone` instead of `JSON.parse(JSON.stringify(object))`.
+
+1. Check for real errors with `Error.isError(e)`
+
 1. Bind (TODO make a separate section about it?)
     `function.bind` does not run the function, but it can also pre-define first parameter(s):
     ```js
@@ -169,6 +172,10 @@
 1. Don't forget to encode and decode query parameters with `encodeURIComponent()` and `decodeURIComponent()`
 
 1. `URLSearchParams` and `URL` are useful to construct and pars URLs and query params
+
+1. Use `AbortController` to cancel fetches and clean up event listeners with one signal. (credit: https://dev.to/sylwia-lask/stop-installing-libraries-10-browser-apis-that-already-solve-your-problems-35bi)
+
+1. Server-Sent Events are a simpler real-time option than WebSockets when the flow is only server-to-client.
 
 1. Padding strings is now built-in
     ```js

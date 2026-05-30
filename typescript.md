@@ -30,6 +30,8 @@
 
 1. `protected` methods of TS classes are private, but accessible by child classes
 
+1. The correct way to declare private methods is not `private mtd` but `#mtd`.
+
 1. Utilities:
     1. `Required<...>` is the opposite of `Partial<...>`
     1. `Omit<...>` is the opposite of `Pick<...>`
@@ -37,4 +39,27 @@
 
     1. More great utilities here: https://dev.to/bhataasim/advanced-typescript-utility-types-in-detail-4mdh
 
+1. An alternative way to (not) use enums:
+    ```ts
+    const routes = { home: "/", admin: "/admin" } as const;
+    type RouteName = keyof typeof routes; // "home" | "admin"
+    ```
 
+1. Get an array element type with `[number]`:
+    ```ts
+    const roles = ["admin", "editor"] as const;
+    type Role = (typeof roles)[number]; // "admin" | "editor"
+    ```
+
+1. `infer` is used with `extends` to capture an inner part of a type that matches a pattern to pass on
+    ```ts
+    type GetReturnType<T> = T extends (...args: never[]) => infer Return ? Return : never;
+    ```
+
+1. Use `satisfies` to validate an object against a broad shape without losing the narrow inferred types of its values. (credit: https://dev.to/lingodotdev/beyond-the-basics-21-typescript-features-you-might-not-know-about-1dbn)
+    ```ts
+    const palette = {
+      red: [255, 0, 0],
+      green: "#00ff00",
+    } satisfies Record<string, string | [number, number, number]>;
+    ```

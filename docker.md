@@ -15,3 +15,8 @@
     ```
     RUN --mount=type=secret,id=mysecret cat /run/secrets/mysecret
     ```
+
+1. BuildKit cache mounts persist package-manager/build-tool caches across builds without baking them into the image layer.
+    ```dockerfile
+    RUN --mount=type=cache,target=/root/.npm npm ci
+    ```

@@ -53,3 +53,14 @@
         <p>Invisible until the summary is clicked</p>
     </details>
     ```
+
+1. A built-in modal:
+    ```html
+    <dialog id="my-id">
+      <!-- odal ocntent goes here -->
+    </dialog>
+
+    <script>
+      document.querySelector("#my-id").showModal();
+    </script>
+    ```
