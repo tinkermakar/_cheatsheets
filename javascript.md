@@ -79,6 +79,18 @@
 
 1. To return a multi-line statement from an <em>arrow function</em>, it’s necessary to use `()` instead of `{}` to wrap your function body. This ensures the code is evaluated as a single statement.
 
+## Destructuring
+
+1. Remove one or more known fields while keeping a clean copy of the remaining object:
+    ```js
+    const { password, ...safeUser } = user;
+    ```
+
+1. Pull a property whose name is only known at runtime:
+    ```js
+    const { [propertyName]: value } = user;
+    ```
+
 ## Using Debuggers
 
 1. Add this to launch.json to preserve Chrome state across debug sessions in terms of settings and Chrome plugins:

@@ -43,3 +43,5 @@
 1. align child items centered vertically without a need for making it a flexbox: `align-content: center;` (to add horizontal centering `margin: 0 auto;` is still needed)
 
 1. Clicking hashtag links to a section brings exactly to the top of that section, but it's too close to the top, we can make space with `scroll-margin-top`
+
+1. Render `\n` line breaks from API/CMS/user text with CSS: `white-space: pre-wrap;` preserves wrapping and spaces, while `pre-line` also sort of does .trim()

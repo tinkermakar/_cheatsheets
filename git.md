@@ -4,3 +4,8 @@
     ```bash
     git config --global push.autoSetupRemote true
     ```
+
+1. Generate a language-specific `.gitignore`
+    ```bash
+    npx gitignore node
+    ```
