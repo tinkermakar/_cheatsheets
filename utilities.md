@@ -9,9 +9,9 @@
 
 
 ### Rotate scanned pages
+compress a PDF (save as optimized)
 
 ```bash
-compress a PDF (save as optimized)
 pdftk scan.pdf rotate 1-endEast output in.pdf
 ```
 

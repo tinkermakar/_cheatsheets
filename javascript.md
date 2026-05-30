@@ -32,6 +32,8 @@
 1. Check if a variable is an Array
     ```js
     const isArray = array instanceof Array;
+    # or
+    const isArray = Array.isArray(value)
     ```
 
 1. Check if array includes a certain value among entries
@@ -72,7 +74,7 @@
 ## Arrow functions
 1. Return an object from arrow function
     ```js
-    const function = () => ({ key1: value1, key2: value2 });
+    const function1 = () => ({ key1: value1, key2: value2 });
     ```
 
 1. To return a multi-line statement from an <em>arrow function</em>, it’s necessary to use `()` instead of `{}` to wrap your function body. This ensures the code is evaluated as a single statement.
@@ -112,7 +114,7 @@
     - Validate and sanitize strings: `validator`
     - Validate incoming HTTP request body, params etc: `joi`
     - Secure HTTP headers in express.js: `helmet`
-    - Encrypt-decrypt: `crypto` or `bcrypt`
+    - Hash/Encrypt-decrypt: `crypto` or `bcrypt`
     - Use `express-rate-limit` to prevent DDOS attacks 
     - Easy sanitization:
         ```js
@@ -158,7 +160,7 @@
 
 1. Padding strings is now built-in
     ```js
-    7.padStart(3, '0')
+    String(7).padStart(3, '0')
     // '007'
     ```
 
@@ -178,8 +180,8 @@
 1. a shorthand for `filter().map()`
     credit: https://dev.to/rajajaganathan/flatmap-vs-filtermap-code-simplicity-aeb
     ```js
-        const arr = [{foo: null}, {foo: undefined}, {foo: 0}, {foo: 1}, {foo: 2}]
-        > arr.flatMap(({ foo }) => foo ? foo : [])
+        const arr = [{foo: null}, {foo: undefined}, {foo: 0}, {foo: 1}, {foo: 2}];
+        arr.flatMap(({ foo }) => foo ? foo : []);
     ```
 
 1. An alternative to `console.time()`

@@ -2,4 +2,4 @@
 
 ## New in React
 
-1. `use` hook is in a sense a React Query killer -- it combines `useEffect` and `useState` in a certain manner, useful as a data fetching shorthand.
+1. `use` hook is in a sense a "React Query" for server-side components -- it combines `useEffect` and `useState` in a certain manner, useful as a data fetching shorthand.

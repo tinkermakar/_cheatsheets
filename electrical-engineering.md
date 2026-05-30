@@ -9,9 +9,9 @@ Voltage (v) = Current (amp) * Resistance (Ω)
 
 ## How to measure
 
-1. Voltage: in circuit
-1. Current (ampere): NOT in circuit
-1. Resistance (ohm): NOT in circuit
+1. Current (ampere): in circuit
+1. Voltage: NOT in/parallel to circuit
+1. Resistance (ohm): NOT in/parallel to circuit
 
 
 ## Measurements

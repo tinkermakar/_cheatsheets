@@ -1,6 +1,6 @@
 # TypeScript Cheatsheet
 
-1. use `never` isntead of `unknown` whenever possible
+1. use `never` instead of `unknown` whenever possible
 
 1. Last resort pseudo-any types:
     ```ts

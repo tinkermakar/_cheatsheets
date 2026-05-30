@@ -1,6 +1,6 @@
 # HTML Cheatsheet
 
-1. `<script defer ...>` runs the script only when the page is done loading
+1. `<script defer ...>` runs the script only when the page is parsed
 
 1. Preload resources with pure HTML
     ```html
@@ -13,7 +13,7 @@
     <img src="/icon.png" loading="lazy" />
     ```
 
-1. How to escape HTML markup
+1. A method to escape HTML markup
     ```html
     <![CDATA[<sender>John Smith</sender>]]>
     ```

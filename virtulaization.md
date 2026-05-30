@@ -1,3 +1,3 @@
 # Virtualization Cheatsheet
 
-1. in QEMU/kvm bridge networks are called open networks
+1. in QEMU/kvm bridge networks -- if `bridge` is unavailable use `open` networks
