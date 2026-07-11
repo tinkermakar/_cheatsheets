@@ -20,3 +20,12 @@
     ```dockerfile
     RUN --mount=type=cache,target=/root/.npm npm ci
     ```
+
+1. Exclude a directory like `node_modules` from a bind mount by adding a separate anonymous volume for it.
+    ```yaml
+    services:
+      app:
+        volumes:
+          - .:/app
+          - /app/node_modules
+    ```

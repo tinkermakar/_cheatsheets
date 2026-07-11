@@ -117,6 +117,23 @@
 
 ## Node Packages
 
+1. Use `npm ci` instead of `npm install` in CI/CD and deployments for a clean, reproducible install from the lockfile.
+
+1. For private GitHub Packages, use a personal access token with only the required package-read permission.
+
+1. Reduce exposure to npm supply-chain attacks by refusing package versions published less than 7 days ago. Add this to the project's `.npmrc`:
+    ```ini
+    min-release-age=7
+    ```
+
+    If a newly published version fixes a vulnerability in the news but it's fresher than 7 days:
+    ```bash
+    npm audit fix --min-release-age-exclude=one-specific-package
+
+    # Or a more permissive
+    npm audit fix --min-release-age=0
+    ```
+
 1. Apache replacement: `http-server`
 
 1. Logging: `log4js`
