@@ -29,3 +29,25 @@
           - .:/app
           - /app/node_modules
     ```
+
+1. Always try not to run as root.
+    ```dockerfile
+    RUN chown -R node:node /usr/src/app
+    USER node
+    ```
+
+1. Use a `.dockerignore` to keep `node_modules`,environment files, editor settings etc out of the container.
+
+1. Compose Watch can sync source changes into a development container without rebuilding it. Ignore dependencies so the container keeps its own platform-specific modules.
+    ```yaml
+    services:
+      app:
+        develop:
+          watch:
+            - action: sync
+              path: .
+              target: /usr/src/app
+              ignore:
+                - node_modules/
+    ```
+    Start it with `docker compose watch`.
