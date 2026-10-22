@@ -40,11 +40,14 @@ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dB
 ```bash
 sudo apt install exiftool -y
 
-find . -name '*.xmp' | while read -r xmp; do
+find . -name '*.xmp' -print0 | while IFS= read -r -d '' xmp; do
   media="${xmp%.xmp}"
-  exiftool -overwrite_original \
-    -tagsfromfile "$xmp" \
-    -all:all "$media" &&\
-    rm "$xmp"
+  [[ -f "$media" ]] || continue
+  date=$(exiftool -s3 -XMP:DateTimeOriginal -XMP:CreateDate "$xmp" | head -n1)
+  [[ -n "$date" ]] || continue
+
+  sudo exiftool -overwrite_original -api QuickTimeUTC=1 \
+    -tagsfromfile "$xmp" -all:all "-AllDates=$date" "$media" &&
+    sudo rm -- "$xmp"
 done
 ```
